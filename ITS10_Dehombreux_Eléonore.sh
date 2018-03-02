@@ -25,8 +25,8 @@ cd ~ && echo "Ouverture du dossier racine"
 # Création des utilisateurs 
 
 
-useradd JackMorisson -m  -s /bin/bash -p "`openssl passwd root`" && echo " Utilisateur JackMorisson créé ! "
-useradd Tracer -m  -s /bin/bash -p "`openssl passwd root`" && echo " Utilisateur Tracer créé ! "
+useradd JackMorisson -m -s /bin/bash -p "`openssl passwd root`" && echo " Utilisateur JackMorisson créé ! "
+useradd Tracer -m -s /bin/bash -p "`openssl passwd root`" && echo " Utilisateur Tracer créé ! "
 useradd Fatale -m  -s /bin/bash -p "`openssl passwd root`" && echo " Utilisateur Fatale créé ! "
 
 
@@ -38,7 +38,8 @@ groupadd Overwatch && usermod -aG Overwatch JackMorisson && usermod -aG Overwatc
 
 # Changement des droits sur le script 
 
-chown Fatale /home/ITS10_Dehombreux_Eléonore.sh && chmod 155 /home/ITS10_Dehombreux_Eléonore.sh && echo " Les accès au script Dehombreux_Eléonore.sh ont été modifiés."
+chown Fatale /home/ITS10_Dehombreux_Eléonore.sh
+chmod 155 /home/ITS10_Dehombreux_Eléonore.sh && echo " Les accès au script Dehombreux_Eléonore.sh ont été modifiés."
 
 
 
@@ -52,7 +53,7 @@ cd .. && mkdir info && echo "Creation du dossier /home/info"
 
 # Attribution des droits utilisateurs de Fatale 
 
-chown Fatale:Overwatch home/Lagriffe/Gantelet_Infini && chmod 740 home/Lagriffe/Gantelet_Infini && echo "Fatale peut gérer le dossier home/Lagriffe/Gantelet_Infini. 
+chown Fatale:Overwatch /home/Lagriffe/Gantelet_Infini && chmod 740 /home/Lagriffe/Gantelet_Infini && echo "Fatale peut gérer le dossier home/Lagriffe/Gantelet_Infini. 
 Le groupe Overwatch peut lire le dossier."
  
 
@@ -63,7 +64,7 @@ cd Lagriffe/Gantelet_Infini && echo "Que Onda hahaha" >> plan.txt && echo " Le f
 
 # Création du Script de Fatale
 chown Fatale ../Script && chmod 211 ../Script && cd ../Script
-echo " echo " Un tir, un mort" " >> blackwatch.sh && echo" Fatale a créé un script. Exécution du script : "
+echo " echo " Un tir, un mort" " >> blackwatch.sh && echo " Fatale a créé un script. Exécution du script : "
 bash blackwatch.sh
 
 
@@ -75,11 +76,11 @@ bash Hey\!.sh
 
 
 # Empêcher Tracer d'avoir accès au dossier de JackMorisson
-cd .. && chmod 770 JackMorisson && echo " Tracer n'a plus accès au dossier de JackMorisson"
+cd .. && chmod 770 /home/JackMorisson && echo " Tracer n'a plus accès au dossier de JackMorisson"
 
 
 # Empêcher Tracer d'écrire dans /home/info 
-chmod 775 info && echo " Tracer ne peut plus écrire dans /home/info"
+chmod 775 /home/info && echo " Tracer ne peut plus écrire dans /home/info"
 
 
 
